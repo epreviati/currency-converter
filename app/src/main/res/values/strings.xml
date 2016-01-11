@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Currency Converter</string>
+    <string name="version">Version:</string>
+    <string name="developer">Previati Edgardo</string>
+
+    <string name="activity_name_main">Currency Converter</string>
+    <string name="activity_name_disclaimer">Disclaimer</string>
+    <string name="activity_name_preferences">Preferences</string>
+
+    <string name="action_update">Update</string>
+    <string name="action_preferences">Preferences</string>
+    <string name="action_info">About</string>
+
+    <string name="toast_updating">Updating exchange quote...</string>
+    <string name="toast_error">Error while updating exchange quote!</string>
+
+    <string name="spinner_currency_default_value">Default</string>
+    <string name="spinner_currency_default_value_description">Use the system default currency</string>
+
+    <string name="button_confirm_disclaimer">Confirm</string>
+    <string name="button_cancel_disclaimer">Cancel</string>
+    <string name="button_manage_currencies_to_show">Manage Currencies To Show</string>
+
+    <string name="label_disclaimer_text">
+        We cannot guarantee the accuracy of the exchange rates being displayed or used by the calculator.
+        \n\nYou should always confirm current exchange rates with a reputable foreign exchange broker before making any transactions that could be affected by changes in these rates.
+        \n\nThe exchange rates used on this application are obtained from \"finance.yahoo.com\".
+        \n\nRates are for information purposes only and are subject to change without notice. Rates for actual transactions may vary, and we are not offering to enter into any transaction at any rate displayed.
+    </string>
+    <string name="label_check_box_description">I accept terms and conditions</string>
+    <string name="label_info_error">
+        Oooops...
+        \nWe are sorry but an error occurred while updating the exchange quote.
+        \nPlease, check your internet connection and try again!
+    </string>
+    <string name="label_info_exchange_quote">Exchange Quote:</string>
+    <string name="label_info_updated_at">Updated At:</string>
+    <string name="label_spinner_currency_from">From:</string>
+    <string name="label_spinner_currency_to">To:</string>
+    <string name="label_auto_update_exchange_quote">Auto Update Exchange Quote</string>
+    <string name="label_time_update_exchange_quote">Each:</string>
+    <string name="label_minute">minute</string>
+    <string name="label_minutes">minutes</string>
+    <string name="label_hour">hour</string>
+    <string name="label_hours">hours</string>
+    <string name="label_day">day</string>
+    <string name="label_days">days</string>
+    <string name="label_preferred_currencies">Preferred Currencies</string>
+    <string name="label_spinner_default_currency_from">From:</string>
+    <string name="label_spinner_default_currency_to">To:</string>
+    <string name="label_show_all_currencies">Show All Currencies</string>
+
+</resources>

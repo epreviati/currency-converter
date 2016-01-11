@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    // light gray
+    <color name="app_background">#ffEEEEEE</color>
+
+    // palette 500
+    <color name="app_color">#ffF44336</color>
+
+    // palette 500
+    <color name="app_color_actionbar">#ffF44336</color>
+
+    // palette 700
+    <color name="app_color_statusbar">#ffD32F2F</color>
+
+    // palette 300
+    <color name="app_color_hint">#ffEF9A9A</color>
+
+    // 99 + palette 500
+    <color name="app_color_highlight">#99F44336</color>
+
+    // light gray
+    <color name="separator_color">#ffCCCCCC</color>
+
+    // light gray
+    <color name="spinner_description_color">#ffCCCCCC</color>
+
+</resources>
