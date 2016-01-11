@@ -1,0 +1,219 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color_statusbar"
+    android:fitsSystemWindows="true"
+    tools:context=".PreferenceActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:theme="@style/MyActionBar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/relativelayout_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/label_auto_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/label_auto_update_exchange_quote"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_auto_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:checked="true"
+                        android:gravity="center_vertical" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativelayout_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/relativelayout_1"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/label_time_to_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/label_time_update_exchange_quote"
+                        android:textSize="18dp" />
+
+                    <RadioGroup
+                        android:id="@+id/radiogroup_auto_update"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_toRightOf="@id/label_time_to_update"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radiobutton_auto_update_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.33"
+                            android:checked="true"
+                            android:text="5 mins"
+                            android:textSize="12dp" />
+
+                        <RadioButton
+                            android:id="@+id/radiobutton_auto_update_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.33"
+                            android:text="1 hour"
+                            android:textSize="12dp" />
+
+                        <RadioButton
+                            android:id="@+id/radiobutton_auto_update_3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.33"
+                            android:text="1 day"
+                            android:textSize="12dp" />
+
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/separator_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/relativelayout_2"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/app_color" />
+
+                <RelativeLayout
+                    android:id="@+id/relativelayout_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/separator_1"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/text_view_label_preferred_currencies"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="@string/label_preferred_currencies"
+                        android:textSize="18dp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_default_currency_from"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/text_view_label_preferred_currencies"
+                        android:background="@drawable/spinner_currency_transition_transparent_red"
+                        android:paddingBottom="6dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="16dp"
+                        android:spinnerMode="dropdown" />
+
+                    <Spinner
+                        android:id="@+id/spinner_default_currency_to"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/spinner_default_currency_from"
+                        android:background="@drawable/spinner_currency_transition_transparent_red"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="6dp"
+                        android:spinnerMode="dropdown" />
+
+                </RelativeLayout>
+
+                <!--
+                Not implemented in v1.0
+                <View
+                    android:id="@+id/separator_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/relativelayout_3"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/app_color" />
+
+                <RelativeLayout
+                    android:id="@+id/relativelayout_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/separator_2"
+                    android:gravity="center_vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/relativelayout_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/label_show_all_currencies"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/label_show_all_currencies"
+                            android:textSize="18dp" />
+
+                        <CheckBox
+                            android:id="@+id/checkbox_show_all_currencies"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_alignParentRight="true"
+                            android:checked="true"
+                            android:gravity="center_vertical" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/button_manage_currencies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/relativelayout_5"
+                        android:text="@string/button_manage_currencies_to_show"
+                        android:enabled="false"
+                        android:clickable="false"
+                        android:gravity="center" />
+
+                </RelativeLayout>
+                -->
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

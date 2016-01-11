@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="2dp">
+
+    <TextView
+        android:id="@+id/text_view_currency_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:text="Lorem ipsum"
+        android:textColor="@android:color/black"
+        android:textSize="35dp" />
+
+    <TextView
+        android:id="@+id/text_view_currency_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_currency_code"
+        android:gravity="center_vertical"
+        android:text="Lorem ipsum dolor sit amet"
+        android:textColor="@color/spinner_description_color"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/text_view_currency_symbol"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="xXx"
+        android:textColor="@android:color/black"
+        android:textSize="30dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/text_view_currency_description"
+        android:layout_marginTop="10dp"
+        android:background="@color/separator_color" />
+
+</RelativeLayout>
