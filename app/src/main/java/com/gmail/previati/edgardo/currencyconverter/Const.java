@@ -1,14 +1,14 @@
 package com.gmail.previati.edgardo.currencyconverter;
 
 /**
- * Created by Edgardo on 24/10/2014.
+ * Updated by Edgardo on 26/09/2018.
  */
 public final class Const {
 
     public static final String DATE_FORMAT = "dd/MM/yyyy HH:mm:ss";
 
-    public static final String URL_BASE = "http://finance.yahoo.com/";
-    public static final String URL_CONVERSION = "d/quotes.csv?e=.csv&f=c4l1&s=%s%s=X";
+    public static final String URL_BASE = "https://free.currencyconverterapi.com";
+    public static final String URL_CONVERSION = "/api/v6/convert?q={FROM}_{TO}&compact=ultra";
 
     public static final String HEADER_CONTENT_TYPE = "Content-Type";
     public static final String HEADER_CONTENT_LENGTH = "Content-Length";
@@ -26,9 +26,9 @@ public final class Const {
 
     public static final String KEY_PREFERENCE_HIDE_CURRENCY = ":hide:currency";
 
-    public static final String KEY_PREFERENCE_DISCLAIMERR_ACCEPTED= "disclaimer:accepted";
-    public static final String KEY_PREFERENCE_DATE_DISCLAIMERR_ACCEPTED= "disclaimer:accepted:date";
-    public static final int VALIDITY_DAYS = 10;
+    public static final String KEY_PREFERENCE_DISCLAIMERR_ACCEPTED = "disclaimer:accepted";
+    public static final String KEY_PREFERENCE_DATE_DISCLAIMERR_ACCEPTED = "disclaimer:accepted:date";
+    public static final int VALIDITY_DAYS = 30;
 
     public static final String EMPTY = "";
     public static final String SPACE = " ";

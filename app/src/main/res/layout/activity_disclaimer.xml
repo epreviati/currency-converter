@@ -1,105 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@color/app_color_statusbar"
-android:fitsSystemWindows="true"
-tools:context=".DisclaimerActivity">
-
-<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_background">
+    android:background="@color/app_color_statusbar"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.DisclaimerActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        app:theme="@style/MyActionBar" />
+        android:layout_height="match_parent"
+        android:background="@color/app_background">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/text_view_disclaimer_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/label_disclaimer_text"
-                android:textColor="@android:color/black"
-                android:textSize="16dp" />
-
-        <View
-            android:id="@+id/separator_2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/text_view_disclaimer_text"
-            android:background="@color/app_color" />
-
-        <TextView
-            android:id="@+id/text_view_accept_disclaimer"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_below="@id/separator_2"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:gravity="center_vertical"
-            android:text="@string/label_check_box_description"
-            android:textColor="@android:color/black"
-            android:textSize="18dp" />
-
-        <CheckBox
-            android:id="@+id/checkbox_accept_disclaimer"
-            style="@drawable/apptheme_btn_check_holo_light"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/text_view_disclaimer_text"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:checked="false"
-            android:gravity="center_vertical" />
-
-        <LinearLayout
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_view_accept_disclaimer"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+            android:minHeight="?attr/actionBarSize"
+            app:theme="@style/MyActionBar" />
 
-            <Button
-                android:id="@+id/button_confirm_disclaimer"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="0.5"
-                android:clickable="false"
-                android:enabled="false"
-                android:text="@string/button_confirm_disclaimer" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar">
 
-            <Button
-                android:id="@+id/button_cancel_disclaimer"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="0.5"
-                android:text="@string/button_cancel_disclaimer" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/text_view_disclaimer_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/label_disclaimer_text"
+                    android:textColor="@android:color/black"
+                    android:textSize="16dp" />
 
-        </RelativeLayout>
+                <View
+                    android:id="@+id/separator_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/text_view_disclaimer_text"
+                    android:background="@color/app_color" />
 
-    </ScrollView>
+                <TextView
+                    android:id="@+id/text_view_accept_disclaimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/separator_2"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/label_check_box_description"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp" />
 
-</RelativeLayout>
+                <CheckBox
+                    android:id="@+id/checkbox_accept_disclaimer"
+                    style="@drawable/apptheme_btn_check_holo_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/text_view_disclaimer_text"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="5dp"
+                    android:checked="false"
+                    android:gravity="center_vertical" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_view_accept_disclaimer"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+
+                    <Button
+                        android:id="@+id/button_confirm_disclaimer"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="0.5"
+                        android:clickable="false"
+                        android:enabled="false"
+                        android:text="@string/button_confirm_disclaimer" />
+
+                    <Button
+                        android:id="@+id/button_cancel_disclaimer"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="0.5"
+                        android:text="@string/button_cancel_disclaimer" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
 
 </RelativeLayout>

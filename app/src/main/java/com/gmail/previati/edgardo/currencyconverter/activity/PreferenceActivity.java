@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Edgardo on 24/10/2014.
+ * Updated by Edgardo on 26/09/2018.
  */
 public class PreferenceActivity extends BaseActivity {
 

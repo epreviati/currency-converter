@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textColorHighlight">@color/app_color_highlight</item>
 
-        <item name="android:listChoiceIndicatorMultiple">@drawable/apptheme_btn_check_holo_light</item>
-        <item name="android:listChoiceIndicatorSingle">@drawable/apptheme_btn_radio_holo_light</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/apptheme_btn_check_holo_light
+        </item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/apptheme_btn_radio_holo_light
+        </item>
 
         <item name="android:textSelectHandleLeft">@drawable/apptheme_text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/apptheme_text_select_handle_right
