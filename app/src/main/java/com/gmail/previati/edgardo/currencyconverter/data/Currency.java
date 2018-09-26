@@ -3,7 +3,7 @@ package com.gmail.previati.edgardo.currencyconverter.data;
 import com.gmail.previati.edgardo.currencyconverter.Const;
 
 /**
- * Created by e.previati on 21/10/2014.
+ * Updated by Edgardo on 26/09/2018.
  */
 public class Currency {
 

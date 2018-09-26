@@ -5,7 +5,7 @@ import com.gmail.previati.edgardo.currencyconverter.data.Currencies;
 import java.util.Locale;
 
 /**
- * Created by Edgardo on 13/12/2014.
+ * Updated by Edgardo on 26/09/2018.
  */
 public class MyLocale {
 

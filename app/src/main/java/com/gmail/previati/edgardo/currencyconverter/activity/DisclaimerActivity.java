@@ -14,8 +14,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
-
+/**
+ * Updated by Edgardo on 26/09/2018.
+ */
 public class DisclaimerActivity extends BaseActivity {
 
     protected static final String TAG = DisclaimerActivity.class.getName();
@@ -38,12 +41,12 @@ public class DisclaimerActivity extends BaseActivity {
         initDrawerLayout();
         initActionBar();
 
-        mCheckBoxAccept = (CheckBox) findViewById(R.id.checkbox_accept_disclaimer);
-        mButtonConfirm = (Button) findViewById(R.id.button_confirm_disclaimer);
-        mButtonCancel = (Button) findViewById(R.id.button_cancel_disclaimer);
+        mCheckBoxAccept = findViewById(R.id.checkbox_accept_disclaimer);
+        mButtonConfirm = findViewById(R.id.button_confirm_disclaimer);
+        mButtonCancel = findViewById(R.id.button_cancel_disclaimer);
     }
 
-    protected void initComponentsActions(){
+    protected void initComponentsActions() {
         mCheckBoxAccept.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -64,7 +67,7 @@ public class DisclaimerActivity extends BaseActivity {
                         Const.KEY_PREFERENCE_DISCLAIMERR_ACCEPTED,
                         true);
 
-                DateFormat df = new SimpleDateFormat(Const.DATE_FORMAT);
+                DateFormat df = new SimpleDateFormat(Const.DATE_FORMAT, Locale.getDefault());
                 Calendar now = new GregorianCalendar();
                 Util.savePreferenceValue(
                         mContext,

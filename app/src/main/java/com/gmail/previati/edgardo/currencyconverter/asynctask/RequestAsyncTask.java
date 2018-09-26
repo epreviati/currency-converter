@@ -6,16 +6,15 @@ import android.util.Log;
 import com.gmail.previati.edgardo.currencyconverter.Const;
 import com.gmail.previati.edgardo.currencyconverter.asynctask.handler.Response;
 
-import org.apache.http.client.methods.HttpGet;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
- * Created by Edgardo on 21/10/2014.
+ * Updated by Edgardo on 26/09/2018.
  */
 public final class RequestAsyncTask extends AsyncTask<String, Void, String> {
 
@@ -43,30 +42,27 @@ public final class RequestAsyncTask extends AsyncTask<String, Void, String> {
     }
 
     private final String httpGet(final String url) {
-        String result = null;
+        StringBuilder result = new StringBuilder();
         BufferedReader bufferedReader = null;
         try {
-            HttpGet httpGet = new HttpGet(url);
-            httpGet.setHeader(
-                    Const.HEADER_CONTENT_TYPE,
-                    Const.HEADER_APPLICATION_JSON);
-            httpGet.setHeader(
-                    Const.HEADER_CONTENT_LENGTH,
-                    Const.HEADER_DEFAULT_LENGTH);
+            URL myUrl = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) myUrl.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty(Const.HEADER_CONTENT_TYPE, Const.HEADER_APPLICATION_JSON);
+            connection.setRequestProperty(Const.HEADER_CONTENT_LENGTH, Const.HEADER_DEFAULT_LENGTH);
+            connection.setUseCaches(false);
+            connection.setDoOutput(false);
+            int responseCode = connection.getResponseCode();
+            if (responseCode == 200) {
+                InputStream inputStream = connection.getInputStream();
 
-            InputStream inputStream = DefaultHttpClientSingleton.instance()
-                    .execute(httpGet)
-                    .getEntity()
-                    .getContent();
+                if (inputStream == null) return null;
 
-            if (inputStream == null) return null;
+                bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
-            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-
-            result = "";
-            String line;
-            while ((line = bufferedReader.readLine()) != null) result += line;
-
+                String line;
+                while ((line = bufferedReader.readLine()) != null) result.append(line);
+            }
         } catch (IOException e) {
             Log.wtf(TAG, e.getLocalizedMessage(), e);
         } finally {
@@ -77,6 +73,6 @@ public final class RequestAsyncTask extends AsyncTask<String, Void, String> {
             }
         }
 
-        return result;
+        return result.toString();
     }
 }

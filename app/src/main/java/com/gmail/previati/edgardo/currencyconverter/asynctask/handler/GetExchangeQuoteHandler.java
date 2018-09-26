@@ -8,14 +8,16 @@ import com.gmail.previati.edgardo.currencyconverter.Const;
 import com.gmail.previati.edgardo.currencyconverter.R;
 import com.gmail.previati.edgardo.currencyconverter.helper.Util;
 
+import org.json.JSONObject;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
+import java.util.Locale;
 
 /**
- * Created by Edgardo on 08/11/2014.
+ * Updated by Edgardo on 26/09/2018.
  */
 public class GetExchangeQuoteHandler implements Response {
 
@@ -26,8 +28,12 @@ public class GetExchangeQuoteHandler implements Response {
     private String mFrom;
     private String mTo;
 
-    public GetExchangeQuoteHandler(final Context context, final TextView textView,
-                                   final String from, final String to) {
+    public GetExchangeQuoteHandler(
+            final Context context,
+            final TextView textView,
+            final String from,
+            final String to
+    ) {
         if (context == null) {
             throw new NullPointerException("Context cannot be null");
         }
@@ -44,30 +50,37 @@ public class GetExchangeQuoteHandler implements Response {
 
     @Override
     public void onSuccess(final String output) {
-        DateFormat df = new SimpleDateFormat(Const.DATE_FORMAT);
-        Calendar now = new GregorianCalendar();
+        try {
+            JSONObject jsonObject = new JSONObject(output);
+            Double rate = jsonObject.getDouble(mFrom.toUpperCase(Locale.getDefault()) + "_" + mTo.toUpperCase(Locale.getDefault()));
+            String exchangeQuote = rate.toString();
 
-        String exchangeQuote = output.substring(6);
-        Util.savePreferenceValue(
-                mContext,
-                Util.concat(mFrom, mTo, Const.KEY_PREFERENCE_EXCHANGE_QUOTE),
-                exchangeQuote);
+            DateFormat df = new SimpleDateFormat(Const.DATE_FORMAT, Locale.getDefault());
+            Calendar now = new GregorianCalendar();
 
-        String updatedAt = df.format(now.getTime());
-        Util.savePreferenceValue(
-                mContext,
-                Util.concat(mFrom, mTo, Const.KEY_PREFERENCE_UPDATE_AT),
-                updatedAt);
+            Util.savePreferenceValue(
+                    mContext,
+                    Util.concat(mFrom, mTo, Const.KEY_PREFERENCE_EXCHANGE_QUOTE),
+                    exchangeQuote);
 
-        mTextView.setText(Util.concat(
-                Util.getStringFromResource(mContext, R.string.label_info_exchange_quote),
-                Const.SPACE,
-                exchangeQuote,
-                Const.NEW_LINE,
-                Const.NEW_LINE,
-                Util.getStringFromResource(mContext, R.string.label_info_updated_at),
-                Const.SPACE,
-                updatedAt));
+            String updatedAt = df.format(now.getTime());
+            Util.savePreferenceValue(
+                    mContext,
+                    Util.concat(mFrom, mTo, Const.KEY_PREFERENCE_UPDATE_AT),
+                    updatedAt);
+
+            mTextView.setText(Util.concat(
+                    Util.getStringFromResource(mContext, R.string.label_info_exchange_quote),
+                    Const.SPACE,
+                    exchangeQuote,
+                    Const.NEW_LINE,
+                    Const.NEW_LINE,
+                    Util.getStringFromResource(mContext, R.string.label_info_updated_at),
+                    Const.SPACE,
+                    updatedAt));
+        } catch (Exception e) {
+            onFail();
+        }
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.gmail.previati.edgardo.currencyconverter.data;
 
 /**
- * Created by Edgardo on 26/10/2014.
+ * Updated by Edgardo on 26/09/2018.
  */
 public class Conversion {
 

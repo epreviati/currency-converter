@@ -35,9 +35,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /**
- * Created by Edgardo on 24/10/2014.
+ * Updated by Edgardo on 26/09/2018.
  */
 public class MainActivity extends BaseActivity {
 
@@ -64,7 +65,7 @@ public class MainActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
 
-        if(!initDisclaimer()) {
+        if (!initDisclaimer()) {
             initSpinnerAction();
             convert();
             initSwitchAction();
@@ -87,7 +88,7 @@ public class MainActivity extends BaseActivity {
 
         boolean outOfDate = true;
         if (acceptedAtDate != null) {
-            SimpleDateFormat dateFormat = new SimpleDateFormat(Const.DATE_FORMAT);
+            SimpleDateFormat dateFormat = new SimpleDateFormat(Const.DATE_FORMAT, Locale.getDefault());
             Date updateAt = new Date();
             try {
                 updateAt = dateFormat.parse(acceptedAtDate);
@@ -152,17 +153,16 @@ public class MainActivity extends BaseActivity {
     }
 
     protected void initComponents() {
-        initDrawerLayout();
         initActionBar();
 
-        mSpinnerCurrencyFrom = (Spinner) findViewById(R.id.spinner_currency_from);
-        mSpinnerCurrencyTo = (Spinner) findViewById(R.id.spinner_currency_to);
+        mSpinnerCurrencyFrom = findViewById(R.id.spinner_currency_from);
+        mSpinnerCurrencyTo = findViewById(R.id.spinner_currency_to);
 
-        mImageViewSwitch = (ImageView) findViewById(R.id.image_view_switch);
-        mTextViewDetails = (TextView) findViewById(R.id.text_view_details);
+        mImageViewSwitch = findViewById(R.id.image_view_switch);
+        mTextViewDetails = findViewById(R.id.text_view_details);
 
-        mEditTextAmountFrom = (EditText) findViewById(R.id.edit_text_amount_source);
-        mEditTextAmountTo = (EditText) findViewById(R.id.edit_text_amount_destination);
+        mEditTextAmountFrom = findViewById(R.id.edit_text_amount_source);
+        mEditTextAmountTo = findViewById(R.id.edit_text_amount_destination);
     }
 
     private void initSpinnerAction() {
@@ -259,7 +259,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 String value = mEditTextAmountFrom.getText().toString();
-                if (value == null || value.equals(Const.EMPTY)) {
+                if (value.equals(Const.EMPTY)) {
                     mEditTextAmountTo.getText().clear();
                     return;
                 }
@@ -268,7 +268,7 @@ public class MainActivity extends BaseActivity {
                 if (value.length() > 1) {
                     while (value.charAt(0) == '0') {
                         value = value.substring(1);
-                        if (value == null || value.equals(Const.EMPTY)) {
+                        if (value.equals(Const.EMPTY)) {
                             break;
                         }
                     }
@@ -310,7 +310,6 @@ public class MainActivity extends BaseActivity {
 
         if (forceUpdate || Util.isExchangeQuoteOutOfDate(mContext, conversion)) {
             new GetExchangeQuote(
-                    mContext,
                     new GetExchangeQuoteHandler(
                             mContext,
                             mTextViewDetails,

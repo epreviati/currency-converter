@@ -6,11 +6,9 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Created by Edgardo on 24/10/2014.
+ * Updated by Edgardo on 26/09/2018.
  */
 public class Currencies {
-
-    // region Currency const & comparator
 
     public static final String BGN = "BGN";
     public static final String CAD = "CAD";
@@ -35,21 +33,19 @@ public class Currencies {
         }
     };
 
-    // endregion
-
     private List<Currency> mCurrencies;
 
     public Currencies() {
-        mCurrencies = new ArrayList<Currency>();
+        mCurrencies = new ArrayList<>();
         setDefaultCurrencies();
     }
 
     public boolean addInHead(final Currency currency) {
-        List<Currency> supp = new ArrayList<Currency>();
+        List<Currency> supp = new ArrayList<>();
         supp.add(currency);
         supp.addAll(mCurrencies);
 
-        mCurrencies = new ArrayList<Currency>();
+        mCurrencies = new ArrayList<>();
         return mCurrencies.addAll(supp);
     }
 

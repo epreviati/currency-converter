@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -18,9 +18,9 @@ import android.view.WindowManager;
 import com.gmail.previati.edgardo.currencyconverter.R;
 
 /**
- * Created by Edgardo on 24/10/2014.
+ * Updated by Edgardo on 26/09/2018.
  */
-public abstract class BaseActivity extends ActionBarActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     protected Activity mActivity;
     protected Context mContext;
@@ -47,14 +47,8 @@ public abstract class BaseActivity extends ActionBarActivity {
         }
     }
 
-    protected void initDrawerLayout() {
-        // TODO: in v1.0 action bar is not integrated
-        //mDrawerLayout = (DrawerLayout) findViewById(R.id.my_drawer_layout);
-        //mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-    }
-
     protected void initActionBar() {
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar = findViewById(R.id.toolbar);
         if (mToolbar != null) {
             setSupportActionBar(mToolbar);
         }
@@ -87,7 +81,7 @@ public abstract class BaseActivity extends ActionBarActivity {
     }
 
     @SuppressLint("NewApi")
-    protected void openNewActivity(final Class<?> cls,final boolean useDefaultAnimation,
+    protected void openNewActivity(final Class<?> cls, final boolean useDefaultAnimation,
                                    final boolean closeCurrentActivity) {
         try {
             startActivity(new Intent(mContext, cls));
@@ -97,7 +91,7 @@ public abstract class BaseActivity extends ActionBarActivity {
             if (closeCurrentActivity) {
                 this.finish();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.wtf("TAG", e.getMessage());
         }
     }

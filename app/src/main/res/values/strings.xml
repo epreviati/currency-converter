@@ -12,7 +12,7 @@
     <string name="action_preferences">Preferences</string>
     <string name="action_info">About</string>
 
-    <string name="toast_updating">Updating exchange quote...</string>
+    <string name="toast_updating">Updating exchange quote…</string>
     <string name="toast_error">Error while updating exchange quote!</string>
 
     <string name="spinner_currency_default_value">Default</string>
@@ -25,12 +25,12 @@
     <string name="label_disclaimer_text">
         We cannot guarantee the accuracy of the exchange rates being displayed or used by the calculator.
         \n\nYou should always confirm current exchange rates with a reputable foreign exchange broker before making any transactions that could be affected by changes in these rates.
-        \n\nThe exchange rates used on this application are obtained from \"finance.yahoo.com\".
+        \n\nThe exchange rates used on this application are obtained from \"free.currencyconverterapi.com".
         \n\nRates are for information purposes only and are subject to change without notice. Rates for actual transactions may vary, and we are not offering to enter into any transaction at any rate displayed.
     </string>
     <string name="label_check_box_description">I accept terms and conditions</string>
     <string name="label_info_error">
-        Oooops...
+        Oooops…
         \nWe are sorry but an error occurred while updating the exchange quote.
         \nPlease, check your internet connection and try again!
     </string>
@@ -39,7 +39,7 @@
     <string name="label_spinner_currency_from">From:</string>
     <string name="label_spinner_currency_to">To:</string>
     <string name="label_auto_update_exchange_quote">Auto Update Exchange Quote</string>
-    <string name="label_time_update_exchange_quote">Each:</string>
+    <string name="label_time_update_exchange_quote">Every:</string>
     <string name="label_minute">minute</string>
     <string name="label_minutes">minutes</string>
     <string name="label_hour">hour</string>
