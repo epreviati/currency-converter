@@ -38,7 +38,6 @@ public class DisclaimerActivity extends BaseActivity {
     }
 
     protected void initComponents() {
-        initDrawerLayout();
         initActionBar();
 
         mCheckBoxAccept = findViewById(R.id.checkbox_accept_disclaimer);
